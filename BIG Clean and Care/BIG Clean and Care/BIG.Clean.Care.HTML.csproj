@@ -67,12 +67,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="contact\contact_me.js" />
+    <Content Include="contact\contact_me.php" />
+    <Content Include="contact\jqBootstrapValidation.js" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\animation.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\style.css" />
+    <Content Include="favicon.png" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="img\about-img.jpg" />
+    <Content Include="img\client_logo1.png" />
+    <Content Include="img\client_logo2.png" />
+    <Content Include="img\client_logo3.png" />
+    <Content Include="img\client_logo4.png" />
+    <Content Include="img\client_logo5.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\mainImg.png" />
+    <Content Include="img\mainImg2.png" />
+    <Content Include="img\main_device_image.png" />
+    <Content Include="img\portfolio_pic1.jpg" />
+    <Content Include="img\portfolio_pic2.jpg" />
+    <Content Include="img\portfolio_pic3.jpg" />
+    <Content Include="img\portfolio_pic4.jpg" />
+    <Content Include="img\portfolio_pic5.jpg" />
+    <Content Include="img\portfolio_pic6.jpg" />
+    <Content Include="img\portfolio_pic7.jpg" />
+    <Content Include="img\portfolio_pic8.jpg" />
+    <Content Include="img\team_pic1.jpg" />
+    <Content Include="img\team_pic2.jpg" />
+    <Content Include="img\team_pic3.jpg" />
+    <Content Include="img\team_pic4.jpg" />
+    <Content Include="img\twitter_bird.png" />
+    <Content Include="index.html" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\html5element.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
+    <Content Include="js\jquery-scrolltofixed.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.isotope.js" />
+    <Content Include="js\jquery.nav.js" />
+    <Content Include="js\respond-1.1.0.min.js" />
+    <Content Include="js\wow.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
