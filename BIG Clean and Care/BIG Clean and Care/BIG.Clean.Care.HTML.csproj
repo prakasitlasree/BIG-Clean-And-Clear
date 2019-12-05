@@ -84,7 +84,7 @@
     <Content Include="img\client_logo4.png" />
     <Content Include="img\client_logo5.png" />
     <Content Include="img\logo.png" />
-    <Content Include="img\mainImg.png" />
+    <Content Include="img\logo_big.png" />
     <Content Include="img\mainImg2.png" />
     <Content Include="img\main_device_image.png" />
     <Content Include="img\portfolio_pic1.jpg" />
