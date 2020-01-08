@@ -7,16 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{43C7E922-F05C-46CB-9E2F-E4FC28C17A77}</ProjectGuid>
+    <ProjectGuid>{BDB11179-4C0D-4FE3-912C-713CBFC0D728}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BIG_Clean_and_Care</RootNamespace>
-    <AssemblyName>BIG Clean and Care</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>BIG.Clean.Care.PRESENT</RootNamespace>
+    <AssemblyName>BIG.Clean.Care.PRESENT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44348</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -62,76 +62,89 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="big_img\about.jpg" />
-    <Content Include="big_img\bg1.jpg" />
-    <Content Include="big_img\BIG_LOGO.png" />
-    <Content Include="big_img\ceo_1.png" />
-    <Content Include="big_img\ceo_2.png" />
-    <Content Include="big_img\ceo_3.png" />
-    <Content Include="big_img\logo.gif" />
-    <Content Include="contact\contact_me.js" />
-    <Content Include="contact\contact_me.php" />
-    <Content Include="contact\jqBootstrapValidation.js" />
-    <Content Include="css\animate.css" />
-    <Content Include="css\animation.css" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\font-awesome.css" />
-    <Content Include="css\style.css" />
-    <Content Include="favicon.png" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="img\about-img.jpg" />
-    <Content Include="img\client_logo1.png" />
-    <Content Include="img\client_logo2.png" />
-    <Content Include="img\client_logo3.png" />
-    <Content Include="img\client_logo4.png" />
-    <Content Include="img\client_logo5.png" />
-    <Content Include="img\logo.png" />
-    <Content Include="img\logo_big.png" />
-    <Content Include="img\mainImg.png" />
-    <Content Include="img\mainImg2.png" />
-    <Content Include="img\main_device_image.png" />
-    <Content Include="img\portfolio_pic1.jpg" />
-    <Content Include="img\portfolio_pic2.jpg" />
-    <Content Include="img\portfolio_pic3.jpg" />
-    <Content Include="img\portfolio_pic4.jpg" />
-    <Content Include="img\portfolio_pic5.jpg" />
-    <Content Include="img\portfolio_pic6.jpg" />
-    <Content Include="img\portfolio_pic7.jpg" />
-    <Content Include="img\portfolio_pic8.jpg" />
-    <Content Include="img\team_pic1.jpg" />
-    <Content Include="img\team_pic2.jpg" />
-    <Content Include="img\team_pic3.jpg" />
-    <Content Include="img\team_pic4.jpg" />
-    <Content Include="img\twitter_bird.png" />
-    <Content Include="index.html" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\custom.js" />
-    <Content Include="js\html5element.js" />
-    <Content Include="js\html5shiv.js" />
-    <Content Include="js\jquery-1.11.0.min.js" />
-    <Content Include="js\jquery-scrolltofixed.js" />
-    <Content Include="js\jquery.easing.1.3.js" />
-    <Content Include="js\jquery.isotope.js" />
-    <Content Include="js\jquery.nav.js" />
-    <Content Include="js\respond-1.1.0.min.js" />
-    <Content Include="js\wow.js" />
+    <Content Include="assets\images\about.jpg" />
+    <Content Include="assets\images\bg1.jpg" />
+    <Content Include="assets\images\BIG_LOGO.png" />
+    <Content Include="assets\images\ceo_1.png" />
+    <Content Include="assets\images\ceo_2.png" />
+    <Content Include="assets\images\ceo_3.png" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\animation.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\images\portfolio_pic1.jpg" />
+    <Content Include="assets\images\portfolio_pic2.jpg" />
+    <Content Include="assets\images\portfolio_pic3.jpg" />
+    <Content Include="assets\images\portfolio_pic4.jpg" />
+    <Content Include="assets\images\portfolio_pic5.jpg" />
+    <Content Include="assets\images\portfolio_pic6.jpg" />
+    <Content Include="assets\images\portfolio_pic7.jpg" />
+    <Content Include="assets\images\portfolio_pic8.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="assets\images\client_logo1.png" />
+    <Content Include="assets\images\client_logo2.png" />
+    <Content Include="assets\images\client_logo3.png" />
+    <Content Include="assets\images\client_logo4.png" />
+    <Content Include="assets\images\client_logo5.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\html5element.js" />
+    <Content Include="assets\js\html5shiv.js" />
+    <Content Include="assets\js\jquery-1.11.0.min.js" />
+    <Content Include="assets\js\jquery-scrolltofixed.js" />
+    <Content Include="assets\js\jquery.easing.1.3.js" />
+    <Content Include="assets\js\jquery.isotope.js" />
+    <Content Include="assets\js\jquery.nav.js" />
+    <Content Include="assets\js\respond-1.1.0.min.js" />
+    <Content Include="assets\js\wow.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Views\web.config" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,7 +152,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -153,9 +169,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>23395</DevelopmentServerPort>
+          <DevelopmentServerPort>42370</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:23395/</IISUrl>
+          <IISUrl>https://localhost:44348/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

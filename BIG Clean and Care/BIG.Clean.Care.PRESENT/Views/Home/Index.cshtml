@@ -1,29 +1,38 @@
-﻿<!doctype html>
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
-    <title>บริการหาแม่บ้านประจำ แม่บ้าน+พี่เลี้ยง พี่เลี้ยงเด็ก และคนดูแลผู้สูงอายุ ตรงตามใจลูกค้าที่สุด บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</title>
+    <title>บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</title>
     <link rel="icon" href="favicon.png" type="image/png">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="css/animate.css" rel="stylesheet" type="text/css">
 
-    <!--[if lt IE 9]>
-        <script src="js/respond-1.1.0.min.js"></script>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/html5element.js"></script>
-    <![endif]-->
-
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link href="~/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/assets/css/animate.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!--Header_section-->
+    <style>
+        html {
+            font-family: 'Sarabun', sans-serif;
+        }
+    </style>
     <header id="header_wrapper">
         <div class="container">
             <div class="header_box">
-                <div class="logo"><a href="/"><img src="big_img/BIG_LOGO.png" alt="logo"></a></div>
+                <div class="logo">
+                    <a href="#">
+                        <img src="~/assets/images/BIG_LOGO.png" alt="logo" />
+                    </a>
+                </div>
                 <nav class="navbar navbar-inverse" role="navigation">
                     <div class="navbar-header">
                         <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -36,7 +45,8 @@
                             <li><a href="#Portfolio" class="scroll-link">รายชื่อลูกค้า</a></li>
                             <!--<li><a href="#clients" class="scroll-link"></a></li>-->
                             <li><a href="#team" class="scroll-link">ทีมงานบริหาร</a></li>
-                            <li><a href="/news/index" class="scroll-link">ติดต่อเรา</a></li>
+                            <li><a href="#contact" class="scroll-link">ติดต่อเรา</a></li>
+                            <li><a href="/news/index" class="scroll-link">ข่าวสาร</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -52,7 +62,7 @@
                     <div class="row">
                         <div class="col-lg-5 col-sm-7">
                             <div class="top_left_cont zoomIn wow animated">
-                                <h2>BIG CLEAN AND CARE SERVICE CO.,LTD. <strong> </strong>  </h2>
+                                <h2>Big clean and care services <strong> </strong>  </h2>
                                 <p>
                                     บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด เป็นองค์กรที่ให้บริการจัดส่งแม่บ้านประจำสำนักงาน ออฟฟิศ โรงงาน และสถานที่ต่างๆ แบบครบวงจร ซึ่งเรามีทีมงานมืออาชีพและมีคุณภาพ และมีความซื่อสัตย์ในการบริการ
                                 </p>
@@ -60,7 +70,7 @@
                             </div>
                         </div>
                         <div>
-                            <img src="big_img/bg1.jpg" class="bannerImg zoomIn wow animated" alt="" />
+                            <img src="~/assets/images/bg1.jpg" class="bannerImg zoomIn wow animated" alt="" />
                         </div>
                     </div>
                 </div>
@@ -68,20 +78,20 @@
         </div>
     </section>
     <!--Hero_Section-->
-
+    <!--Aboutus-->
     <section id="aboutUs">
-        <!--Aboutus-->
+
         <div class="inner_wrapper">
             <div class="container">
                 <h2>เกี่ยวกับเรา</h2>
                 <div class="inner_section">
                     <div class="row">
                         <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
-                            <img src="big_img/about.jpg" class="img-circle delay-03s animated wow zoomIn" alt="">
+                            <img src="~/assets/images/about.jpg" class="img-circle delay-03s animated wow zoomIn" alt="">
                         </div>
                         <div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
                             <div class=" delay-01s animated fadeInDown wow animated">
-                                <h3>BIG CLEAN AND CARE SERVICE CO.,LTD.</h3><br />
+                                <h3>Big clean and care services</h3><br />
                                 <p>
                                     บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด เป็นองค์กรที่ให้บริการจัดส่งแม่บ้านประจำสำนักงาน ออฟฟิศ โรงงาน และสถานที่ต่างๆ แบบครบวงจร ซึ่งเรามีทีมงานมืออาชีพและมีคุณภาพ และมีความซื่อสัตย์ในการบริการ
                                 </p>
@@ -196,11 +206,11 @@
             </div>
             <!--/Portfolio Filters -->
             <!-- Portfolio Wrapper -->
-            <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper">
+            <div class="isotope fadeInLeft animated wow animated" style="position: relative; overflow: hidden; visibility: visible; animation-name: fadeInLeft; height: 706px;" id="portfolio_wrapper">
 
                 <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   appleIOS isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic1.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four   appleIOS isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic1.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">SMS Mobile App</h4>
@@ -209,8 +219,8 @@
                 </div>
                 <!--/Portfolio Item -->
                 <!-- Portfolio Item-->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic2.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(475px, 0px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four  design isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic2.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">Finance App</h4>
@@ -219,8 +229,8 @@
                 </div>
                 <!--/Portfolio Item -->
                 <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design  isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic3.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(950px, 0px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four  design  isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic3.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">GPS Concept</h4>
@@ -229,8 +239,8 @@
                 </div>
                 <!--/Portfolio Item-->
                 <!-- Portfolio Item-->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  android  prototype web isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic4.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(1425px, 0px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four  android  prototype web isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic4.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">Shopping</h4>
@@ -239,8 +249,8 @@
                 </div>
                 <!-- Portfolio Item -->
                 <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic5.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(0px, 353px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four  design isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic5.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">Managment</h4>
@@ -249,8 +259,8 @@
                 </div>
                 <!--/Portfolio Item -->
                 <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  web isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic6.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(475px, 353px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four  web isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic6.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">iPhone</h4>
@@ -259,8 +269,8 @@
                 </div>
                 <!--/Portfolio Item -->
                 <!-- Portfolio Item  -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design web isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic7.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(950px, 353px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four  design web isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic7.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">Nexus Phone</h4>
@@ -269,14 +279,14 @@
                 </div>
                 <!--/Portfolio Item -->
                 <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   android isotope-item">
-                    <div class="portfolio_img"> <img src="img/portfolio_pic8.jpg" alt="Portfolio 1"> </div>
+                <div style="transform: translate3d(1425px, 353px, 0px) scale3d(1, 1, 1); position: absolute; left: 0px; top: 0px; opacity: 1; width: 475px;" class="portfolio-item one-four   android isotope-item">
+                    <div class="portfolio_img"> <img src="~/assets/images/portfolio_pic8.jpg" alt="Portfolio 1"> </div>
                     <div class="item_overlay">
                         <div class="item_info">
                             <h4 class="project_name">Android</h4>
                         </div>
                     </div>
-                    </a>
+
                 </div>
                 <!--/Portfolio Item -->
 
@@ -297,7 +307,9 @@
 
     </section>
     <!--/Portfolio -->
-     
+
+
+
 
     <section class="page_section team" id="team">
         <!--main-section team-start-->
@@ -308,17 +320,17 @@
             <div class="member-area">
                 <div class="row">
                     <div class="col-xs-12" style="align-content:center">
-                        <div class="member wow bounceInUp animated">
-                            <div class="member-container" data-wow-delay=".1s">
+                        <div class="member wow bounceInUp animated animated" style="visibility: visible; animation-name: bounceInUp;">
+                            <div class="member-container" data-wow-delay=".5s">
                                 <div class="inner-container">
                                     <div class="author-avatar">
-                                        <img class="img-circle" src="big_img/ceo_1.png" alt="Team Menber">
+                                        <img class="img-circle" src="~/assets/images/ceo_1.png" alt="Team Menber">
                                     </div><!-- /.author-avatar -->
 
                                     <div class="member-details">
                                         <div class="member-top">
                                             <h4 class="name">
-                                                คุณประนอม   งามประเสริฐ 
+                                                คุณประนอม   งามประเสริฐ
                                             </h4>
                                             <span class="designation">
                                                 ประธานบริหาร
@@ -327,11 +339,11 @@
 
                                         <p>
                                             BIG CLEAN AND CARE SERVICE เป็นบริษัทรับทำความสะอาดจัดส่งแม่บ้าน  โดยบุคลากรที่ทางบริษัทฯได้คัดเลือกต้องผ่านการทดสอบว่ามีใจรักงานด้านบริการทำความสะอาดจริง มีสัญชาติไทยและต้องผ่านการตรวจสอบคดีอาญากับกรมตำรวจทุกคน เพื่อให้มั่นใจว่าแม่บ้านรายวันที่จัดส่งไปให้บริการแก่ลูกค้ามีความชำนาญและเซอร์วิสมายด์ที่ดี
-                                            
+
                                         </p>
                                         <div class="member-social-link">
                                             <a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" class="facebook-btn"><i class="fa fa-facebook"></i></a> 
+                                            <a href="#" class="facebook-btn"><i class="fa fa-facebook"></i></a>
                                             <a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
                                         </div><!-- /.member-social-link -->
                                     </div><!-- /.member-details -->
@@ -340,14 +352,14 @@
                         </div><!-- /.member -->
                     </div>
 
-                     
+
 
                     <div class="col-md-6">
-                        <div class="member wow bounceInUp animated">
+                        <div class="member wow bounceInUp animated animated" style="visibility: visible; animation-name: bounceInUp;">
                             <div class="member-container" data-wow-delay=".5s">
                                 <div class="inner-container">
                                     <div class="author-avatar">
-                                        <img class="img-circle" src="big_img/ceo_2.png" alt="Team Menber">
+                                        <img class="img-circle" src="~/assets/images/ceo_2.png" alt="Team Menber">
                                     </div><!-- /.author-avatar -->
                                     <div class="member-details">
                                         <div class="member-top">
@@ -363,7 +375,7 @@
                                         </p>
                                         <div class="member-social-link">
                                             <a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" class="facebook-btn"><i class="fa fa-facebook"></i></a> 
+                                            <a href="#" class="facebook-btn"><i class="fa fa-facebook"></i></a>
                                             <a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
                                         </div><!-- /.member-social-link -->
                                     </div><!-- /.member-details -->
@@ -373,11 +385,11 @@
                     </div>
 
                     <div class="col-md-6">
-                        <div class="member wow bounceInUp animated">
-                            <div class="member-container" data-wow-delay=".7s">
+                        <div class="member wow bounceInUp animated animated" style="visibility: visible; animation-name: bounceInUp;">
+                            <div class="member-container" data-wow-delay=".5s">
                                 <div class="inner-container">
                                     <div class="author-avatar">
-                                        <img class="img-circle" src="big_img/ceo_3.png" alt="Team Menber">
+                                        <img class="img-circle" src="~/assets/images/ceo_3.png" alt="Team Menber">
                                     </div><!-- /.author-avatar -->
                                     <div class="member-details">
                                         <div class="member-top">
@@ -394,7 +406,7 @@
                                         <div class="member-social-link">
                                             <a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
                                             <a href="#" class="facebook-btn"><i class="fa fa-facebook"></i></a>
-                                           
+
                                             <a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
                                         </div><!-- /.member-social-link -->
                                     </div><!-- /.member-details -->
@@ -408,7 +420,10 @@
 
         </div>
     </section>
+
     <!--/Team-->
+
+   
     <!--Footer-->
     <footer class="footer_wrapper" id="contact">
         <div class="container">
@@ -429,43 +444,36 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-lg-12 wow fadeInLeft delay-06s">
+                    <div class="col-lg-12 wow fadeInLeft delay-06s animated" style="visibility: visible; animation-name: fadeInLeft;">
                         <div class="form">
                             <!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-                            <form name="sentMessage" id="contactForm" novalidate>
+                            <form name="sentMessage" id="contactForm" novalidate="">
                                 <div class="control-group">
                                     <div class="controls">
-                                        <input type="text" class="form-control input-text"
-                                               placeholder="ชื่อ-นามสกุล" id="name" required
-                                               data-validation-required-message="กรุณากรอก ชื่อ-นามสกุล" />
+                                        <input type="text" class="form-control input-text" placeholder="ชื่อ-นามสกุล" id="name" required="" data-validation-required-message="กรุณากรอก ชื่อ-นามสกุล">
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
-                                        <input type="email" class="form-control input-text" placeholder="อีเมลล์"
-                                               id="email" required
-                                               data-validation-required-message="กรุณากรอก email" />
+                                        <input type="email" class="form-control input-text" placeholder="อีเมลล์" id="email" required="" data-validation-required-message="กรุณากรอก email">
+                                        <div class="help-block" style="color:red"></div>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
-                                        <input type="tel" class="form-control input-text" placeholder="เบอร์โทรศัพท์"
-                                               id="tel" required
-                                               data-validation-required-message="กรุณากรอกเบอร์โทรศัพท์" />
+                                        <input type="tel" class="form-control input-text" placeholder="เบอร์โทรศัพท์" id="tel" required="" data-validation-required-message="กรุณากรอกเบอร์โทรศัพท์">
+                                        <div class="help-block" style="color:red"></div>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
-                                        <textarea rows="10" cols="100" class="form-control input-text"
-                                                  placeholder="ข้อความ" id="message" required
-                                                  data-validation-required-message="กรุณากรอก ข้อความ" minlength="5"
-                                                  data-validation-minlength-message="Min 5 characters"
-                                                  maxlength="999" style="resize:none"></textarea>
+                                        <textarea rows="10" cols="100" class="form-control input-text" placeholder="ข้อความ" id="message" required="" data-validation-required-message="กรุณากรอก ข้อความ" minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999" style="resize:none"></textarea>
+                                        <div class="help-block" style="color:red"></div>
                                     </div>
                                 </div>
                                 <div id="success"> </div> <!-- For success/fail messages -->
-                                <button type="submit" class="btn btn-primary input-btn pull-right">Send</button><br />
+                                <button type="submit" class="btn btn-primary input-btn pull-right">Send</button><br>
                             </form>
                         </div>
                     </div>
@@ -478,16 +486,16 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
-    <script type="text/javascript" src="js/jquery.nav.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script>
-    <script src="contact/jqBootstrapValidation.js"></script>
-    <script src="contact/contact_me.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
 
+
+
+    <script src="~/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery-scrolltofixed.js"></script>
+    <script src="~/assets/js/jquery.nav.js"></script>
+    <script src="~/assets/js/jquery.easing.1.3.js"></script>
+    <script src="~/assets/js/jquery.isotope.js"></script>
+    <script src="~/assets/js/wow.js"></script>
+    <script src="~/assets/js/custom.js"></script>
 </body>
 </html>
