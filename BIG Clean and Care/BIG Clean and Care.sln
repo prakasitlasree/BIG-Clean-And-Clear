@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG.Clean.Care.HTML", "BIG Clean and Care\BIG.Clean.Care.HTML.csproj", "{43C7E922-F05C-46CB-9E2F-E4FC28C17A77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIG.Clean.Care.PRESENT", "BIG.Clean.Care.PRESENT\BIG.Clean.Care.PRESENT.csproj", "{BDB11179-4C0D-4FE3-912C-713CBFC0D728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{43C7E922-F05C-46CB-9E2F-E4FC28C17A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43C7E922-F05C-46CB-9E2F-E4FC28C17A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43C7E922-F05C-46CB-9E2F-E4FC28C17A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB11179-4C0D-4FE3-912C-713CBFC0D728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB11179-4C0D-4FE3-912C-713CBFC0D728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB11179-4C0D-4FE3-912C-713CBFC0D728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB11179-4C0D-4FE3-912C-713CBFC0D728}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
