@@ -67,6 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="big_img\about.jpg" />
+    <Content Include="big_img\bg1.jpg" />
+    <Content Include="big_img\BIG_LOGO.png" />
+    <Content Include="big_img\ceo_1.png" />
+    <Content Include="big_img\ceo_2.png" />
+    <Content Include="big_img\ceo_3.png" />
+    <Content Include="big_img\logo.gif" />
     <Content Include="contact\contact_me.js" />
     <Content Include="contact\contact_me.php" />
     <Content Include="contact\jqBootstrapValidation.js" />
@@ -124,6 +131,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
