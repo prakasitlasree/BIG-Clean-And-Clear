@@ -57,5 +57,42 @@ namespace BIG.Clean.Care.SERVICE
 
             return resp;
         }
+
+        public ResponseModel GetListNewTable()
+        {
+            try
+            {
+                using (BIGCCEntities ctx = new BIGCCEntities())
+                {
+                    var news = ctx.PAGE_CONTENT.Where(o => o.STATUS == 1).ToList();
+
+                    var listdata = news.Select(o => new
+                    {
+                        ID = o.ID,
+                        Header = o.SECTION_NAME,
+                        SubHeader = o.HTML_SUB_HEADER1,
+                        Picture = o.IMAGE_URL2
+
+                    }).ToList();
+                   
+                    if (listdata.Count > 0)
+                    {
+                        resp.STATUS = true;
+                        resp.RESULT = listdata;
+                    }
+                    else
+                    {
+                        resp.STATUS = false;
+                        resp.MESSAGE = "Not found News";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.ERROR_MESSAGE = ex.Message;
+            }
+
+            return resp;
+        }
     }
 }

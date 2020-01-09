@@ -23,7 +23,14 @@ namespace BIG.Clean.Care.PRESENT.Controllers
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
-       
+        public JsonResult GetListNewTable()
+        {
+            var service = new NewsService();
+            var resp = service.GetListNewTable();
+            return Json(resp, JsonRequestBehavior.AllowGet);
+        }
+
+
 
     }
 }
