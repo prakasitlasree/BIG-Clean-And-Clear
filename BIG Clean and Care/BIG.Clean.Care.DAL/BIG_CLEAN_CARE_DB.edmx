@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BIG_CLEAN_CAREModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LOGON">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CREATED_BY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PAGE_CONTENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MODULE" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="SECTION_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="HTML_SUB_HEADER1" Type="nvarchar" MaxLength="4000" />
+          <Property Name="HTML_SUB_HEADER2" Type="nvarchar" MaxLength="4000" />
+          <Property Name="HTML_VALUE" Type="nvarchar" MaxLength="4000" />
+          <Property Name="IMAGE_URL1" Type="nvarchar" MaxLength="500" />
+          <Property Name="IMAGE_URL2" Type="nvarchar" MaxLength="500" />
+          <Property Name="IMAGE_URL3" Type="nvarchar" MaxLength="500" />
+          <Property Name="SEQ" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="int" Nullable="false" />
+          <Property Name="CREATED_BY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="nvarchar" MaxLength="50" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="BIG_CLEAN_CAREModelStoreContainer">
+          <EntitySet Name="LOGON" EntityType="Self.LOGON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAGE_CONTENT" EntityType="Self.PAGE_CONTENT" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BIG_CLEAN_CAREModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LOGON">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PAGE_CONTENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MODULE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SECTION_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HTML_SUB_HEADER1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="HTML_SUB_HEADER2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="HTML_VALUE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE_URL1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE_URL2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE_URL3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SEQ" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="Int32" Nullable="false" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="BIGCCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LOGON" EntityType="Self.LOGON" />
+          <EntitySet Name="PAGE_CONTENT" EntityType="Self.PAGE_CONTENT" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BIG_CLEAN_CAREModelStoreContainer" CdmEntityContainer="BIGCCEntities">
+          <EntitySetMapping Name="LOGON">
+            <EntityTypeMapping TypeName="BIG_CLEAN_CAREModel.LOGON">
+              <MappingFragment StoreEntitySet="LOGON">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAGE_CONTENT">
+            <EntityTypeMapping TypeName="BIG_CLEAN_CAREModel.PAGE_CONTENT">
+              <MappingFragment StoreEntitySet="PAGE_CONTENT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MODULE" ColumnName="MODULE" />
+                <ScalarProperty Name="SECTION_NAME" ColumnName="SECTION_NAME" />
+                <ScalarProperty Name="HTML_SUB_HEADER1" ColumnName="HTML_SUB_HEADER1" />
+                <ScalarProperty Name="HTML_SUB_HEADER2" ColumnName="HTML_SUB_HEADER2" />
+                <ScalarProperty Name="HTML_VALUE" ColumnName="HTML_VALUE" />
+                <ScalarProperty Name="IMAGE_URL1" ColumnName="IMAGE_URL1" />
+                <ScalarProperty Name="IMAGE_URL2" ColumnName="IMAGE_URL2" />
+                <ScalarProperty Name="IMAGE_URL3" ColumnName="IMAGE_URL3" />
+                <ScalarProperty Name="SEQ" ColumnName="SEQ" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
