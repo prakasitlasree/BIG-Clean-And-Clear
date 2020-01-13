@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\icon-btn.png" />
     <Content Include="assets\js\bootstrap.bundle.js" />
     <Content Include="assets\css\shop-item.css" />
     <Content Include="assets\images\about.jpg" />

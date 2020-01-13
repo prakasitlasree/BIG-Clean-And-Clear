@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
-    <title>บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</title>
+    <title>บริการหาแม่บ้านประจำ แม่บ้านโรงงาน แม่บ้านประจำอพาร์ทเม้นต์ แม่บ้าน+พี่เลี้ยง พี่เลี้ยงเด็ก และคนดูแลผู้สูงอายุ ตรงตามใจลูกค้าที่สุด บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</title>
     <link rel="icon" href="favicon.png" type="image/png">
 
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -25,7 +25,16 @@
             font-family: 'Sarabun', sans-serif;
         }
     </style>
-
+    <style type="text/css">
+        .stuck {
+            position: fixed;
+            top: 35%;
+            border-radius: 5px;
+            height: auto;
+            overflow-y: auto;
+            z-index: 100
+        }
+    </style>
     <header id="header_wrapper">
         <div class="container">
             <div class="header_box">
@@ -46,10 +55,10 @@
                             <li><a href="/home/index/#Portfolio" class="scroll-link">รายชื่อลูกค้า</a></li>
                             <!--<li><a href="#clients" class="scroll-link"></a></li>-->
                             <li><a href="/home/index/#team" class="scroll-link">ทีมงานบริหาร</a></li>
-                          
+
                             <li class="active"><a href="#news" class="scroll-link">ข่าวสาร</a></li>
                             <li><a href="#news" class="scroll-link">ติดต่อเรา</a></li>
-                            
+
 
                         </ul>
                     </div>
@@ -59,6 +68,7 @@
     </header>
 
     <section class="page_section team" id="news">
+        <a id="floatBtn" href="#contact"><div class="stuck"><img style="width:100%" src="~/assets/images/icon-btn.png"></div></a>
         <!--main-section team-start-->
         <div class="container">
             <h2>ข่าวสาร</h2>
@@ -79,6 +89,7 @@
             <section class="page_section contact" id="contact">
                 <div class="contact_section">
                     <h2> ติดต่อเรา</h2>
+                    <div style="text-align:center"> <h4> HotLine : 088-220-4100 , 098-859-7272 (คุณอ๊อฟ) </h4></div>
                     <div class="row">
                         <div class="col-lg-4">
 
@@ -134,7 +145,10 @@
             <div class="footer_bottom">
                 <span>
                     Copyright © 2020,
-                    <a href="#">บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</a> 19/30 ม.9 ต.นาดี อ.เมือง จ.สมุทรสาคร 74000 088-220-4100 (คุณอ๊อฟ)
+                    <a href="https://www.bigcleanandcare.com/">บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</a> 19/30 ม.9 ต.นาดี อ.เมือง จ.สมุทรสาคร 74000 <br />
+                    088-220-4100 , 098-859-7272 (คุณอ๊อฟ)
+                    <br />
+                    Line ID : bigcleanandcare
                     <a href="/admin/index/" style="color:darkslategrey">Login</a>
                 </span>
 
