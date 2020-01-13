@@ -10,7 +10,6 @@ namespace BIG.Clean.Care.MODEL
     {
         public string MESSAGE { get; set; }
         public bool STATUS { get; set; }
-
         public dynamic RESULT { get; set; }
         public string ERROR_MESSAGE { get; set; }
     }

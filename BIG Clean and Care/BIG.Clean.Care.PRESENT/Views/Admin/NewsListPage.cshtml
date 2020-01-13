@@ -84,40 +84,8 @@
                         รายละเอียดข่าวสาร
                     </div>
                     <div class="card-body">
-                        <form>
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">หัวข้อหลัก</label>
-                                <input type="text" class="form-control" id="SECTION_NAME">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">หัวข้อรอง</label>
-                                <input type="text" class="form-control" id="HTML_SUB_HEADER1">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">เนื้อหา</label>
-                                <textarea rows="5" type="text" class="form-control" id="HTML_VALUE"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">รูปภาพ</label>
-                                <input type="file" class="form-control" id="IMAGE_URL1" accept="image/x-png,image/gif,image/jpeg">
-                            </div>
-
-                            @*<div class="form-group form-check">
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio" checked>แสดงข่าวสาร</label>
-                                </div>
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio">ไม่แสดง</label>
-                                </div>
-                            </div>*@
-
-                        </form>
-                        <hr />
-                        <button onclick="AddNews()" class="btn btn-success">บันทึก</button>
-                        <hr />
-                        @*<table id="table_id" class="display"></table>*@
+                        <table id="table_id" class="display"></table>
                     </div>
                 </div>
                 <!-- /.card -->
@@ -129,17 +97,7 @@
 
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
 
-            </div>
-            <div class="col-lg-9">
-
-            </div>
-
-        </div>
-    </div>
 
     <!-- /.container -->
     <!-- Footer -->
@@ -153,22 +111,68 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
     <script>
+
+        function Delete(id) {
+            var txt;
+            var r = confirm("ต้องการลบข่าวนี้ใช่หรือไม่");
+            if (r == true) {
+                $.ajax({
+                    type: "get",
+                    url: "/news/Delete",
+                    data: { id: id },
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (result, status, xhr) {
+                        if (result.STATUS) {
+                            location.reload();
+                        }
+                        else {
+                            alert(result.ERROR_MESSAGE);
+                        }
+                    }
+                })
+            } 
+        }
+
+      
+
         $(document).ready(function () {
             $.ajax({
                 url: "/news/GetListNewTable",
-                type: "get", //send it through get method
+                type: "get",
                 success: function (response) {
+                    var html = `<thead>
+                                    <tr>
+                                        <th>หัวข้อหลัก</th>
+                                        <th>หัวข้อรอง</th>
+                                        <th>เนื้อหา</th>
+                                        <th>รูปภาพ</th>
+                                        <th>แก้ไข</th>
+                                        <th>ลบ</th>
+                                    </tr>
+                                </thead>
+                                 <tbody>
+                            `;
+                    for (var i = 0; i < response.RESULT.length; i++) {
+                        html += "<tr>";
+                        //html += "<td>" + response.RESULT[i].ID + "</td>";
+                        html += "<td>" + response.RESULT[i].Header + "</td>";
+                        html += "<td>" + response.RESULT[i].SubHeader + "</td>";
+                        html += "<td>" + response.RESULT[i].Value.substring(0, 10) + "...</td>";
+                        html += "<td>" + response.RESULT[i].Picture + "</td>";
+                        html += "<td><button class='btn btn-primary' onclick=Edit(" + response.RESULT[i].ID + ") >แก้ไข</button></td>";
+                        html += "<td><button class='btn btn-danger' onclick=Delete(" + response.RESULT[i].ID + ") >ลบ</button></td>";
+                        html += "</tr>";
+                    }
+                    html += "<tbody>";
+                    debugger;
+                    $("#table_id").html(html);
 
-                    console.log(response)
                     $('#table_id').DataTable({
-                        data: response.RESULT,
-                        columns: [
-                            { data: 'Header' },
-                            { data: 'SubHeader' },
-                            { data: 'Picture' },
 
-                        ]
                     });
+
+
+
                 },
                 error: function (xhr) {
                     console.log(xhr)
@@ -177,37 +181,8 @@
             });
 
         });
-        function AddNews() {
 
-            let fileData = new FormData();
-            let imgUrl = $('#IMAGE_URL1').prop('files');
-            debugger;
-            var sectionName = $('#SECTION_NAME').val()
-            var subHeader = $('#HTML_SUB_HEADER1').val()
-            var content = $('#HTML_VALUE').val()
 
-            fileData.append("IMAGE_URL1", imgUrl[0]);
-            fileData.append('SECTION_NAME', sectionName);
-            fileData.append('HTML_SUB_HEADER1', subHeader);
-            fileData.append('HTML_VALUE', content);
-
-            $.ajax({
-                type: "POST",
-                url: "/admin/AddNews",
-                dataType: "json",
-                contentType: false,
-                processData: false,
-                data: fileData,
-                success: function (result, status, xhr) {
-                    if (result.STATUS) {
-                        window.location.href = "/news/index";
-                    }
-                    else {
-                        alert("บันทึก")
-                    }
-                }
-            })
-        }
 
     </script>
 </body>

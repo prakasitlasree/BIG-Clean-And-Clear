@@ -29,6 +29,35 @@ namespace BIG.Clean.Care.SERVICE
 
             return resp;
         }
+
+        public ResponseModel DeleteNews(int id)
+        {
+            try
+            {
+                using (BIGCCEntities ctx = new BIGCCEntities())
+                {
+                    var obj = ctx.PAGE_CONTENT.Where(o => o.ID == id).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        ctx.PAGE_CONTENT.Remove(obj);
+                        ctx.SaveChanges();
+                        resp.STATUS = true;
+                    }
+                    else
+                    {
+                        resp.ERROR_MESSAGE = "เกิดข้อผิดพลาดกรุณารีเฟรชหน้าเว็บอีกครั้ง";
+                        resp.STATUS = false;
+                    }
+                 
+                }
+            }
+            catch (Exception ex)
+            {
+                resp.ERROR_MESSAGE = ex.Message;
+            }
+
+            return resp;
+        }
         public ResponseModel GetListNew()
         {
             try
@@ -71,10 +100,11 @@ namespace BIG.Clean.Care.SERVICE
                         ID = o.ID,
                         Header = o.SECTION_NAME,
                         SubHeader = o.HTML_SUB_HEADER1,
+                        Value = o.HTML_VALUE,
                         Picture = o.IMAGE_URL2
 
                     }).ToList();
-                   
+
                     if (listdata.Count > 0)
                     {
                         resp.STATUS = true;

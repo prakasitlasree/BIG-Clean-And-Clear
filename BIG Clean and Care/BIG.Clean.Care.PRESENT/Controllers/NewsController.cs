@@ -30,6 +30,15 @@ namespace BIG.Clean.Care.PRESENT.Controllers
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
+        //[HttpPost]
+        public JsonResult Delete(int id)
+        {
+            var service = new NewsService();
+            var resp = service.DeleteNews(id);
+            return Json(resp, JsonRequestBehavior.AllowGet);
+        }
+
+
 
 
     }
