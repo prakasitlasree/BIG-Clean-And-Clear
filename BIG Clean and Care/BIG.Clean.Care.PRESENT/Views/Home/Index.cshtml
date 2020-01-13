@@ -32,7 +32,7 @@
             border-radius: 5px;
             height: auto;
             overflow-y: auto;
-            z-index: 100
+            z-index: 100;
         }
     </style>
     <header id="header_wrapper">
@@ -464,7 +464,7 @@
                     <div class="col-lg-12 wow fadeInLeft delay-06s animated" style="visibility: visible; animation-name: fadeInLeft;">
                         <div class="form">
                             <!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-                            <form name="sentMessage" id="contactForm" novalidate="">
+                            <div name="sentMessage" id="contactForm" novalidate="">
                                 <div class="control-group">
                                     <div class="controls">
                                         <input type="text" class="form-control input-text" placeholder="ชื่อ-นามสกุล" id="name" required="" data-validation-required-message="กรุณากรอก ชื่อ-นามสกุล">
@@ -490,8 +490,8 @@
                                     </div>
                                 </div>
                                 <div id="success"> </div> <!-- For success/fail messages -->
-                                <button type="submit" class="btn btn-primary input-btn pull-right">Send</button><br>
-                            </form>
+                                <button type="button" onclick="SendEmail()" class="btn btn-primary input-btn pull-right">Send</button><br>
+                            </div>
                         </div>
                     </div>
 
@@ -512,18 +512,9 @@
             </div>
         </div>
     </footer>
-
-
-
-    <script type="text/javascript">
-        $("#floatBtn").click(function () {
-            $('html, body').animate({
-                scrollTop: $("#contact").offset().top
-            }, 2000);
-        });
-    </script>
-
-    <script src="~/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
     <script src="~/assets/js/bootstrap.min.js"></script>
     <script src="~/assets/js/jquery-scrolltofixed.js"></script>
     <script src="~/assets/js/jquery.nav.js"></script>
@@ -531,5 +522,46 @@
     <script src="~/assets/js/jquery.isotope.js"></script>
     <script src="~/assets/js/wow.js"></script>
     <script src="~/assets/js/custom.js"></script>
+
+
+    <script type="text/javascript">
+      
+
+        function SendEmail() {
+
+
+            let fileData = new FormData();
+
+            var NAME = $('#name').val()
+            var TEL = $('#tel').val()
+            var EMAIL = $('#email').val()
+            var MESSAGE = $('#message').val()
+
+            fileData.append('NAME', NAME);
+            fileData.append('TEL', TEL);
+            fileData.append('EMAIL', EMAIL);
+            fileData.append('MESSAGE', MESSAGE);
+
+            $.ajax({
+                type: "POST",
+                url: "/email/sendmail",
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                data: fileData,
+                success: function (result, status, xhr) {
+                    if (result.STATUS) {
+                        alert("ส่งอีเมลล์สำเร็จ");
+                        location.reload();
+                    }
+                    else {
+                        alert("เกิดข้อผิดพลาด")
+                    }
+                }
+            })
+        }
+    </script>
+
+   
 </body>
 </html>

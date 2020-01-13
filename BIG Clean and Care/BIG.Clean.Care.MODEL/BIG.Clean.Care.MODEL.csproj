@@ -54,6 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BIG_CLEAN_CARE_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Email.cs" />
     <Compile Include="LOGON.cs">
       <DependentUpon>BIG_CLEAN_CARE_DB.tt</DependentUpon>
     </Compile>
