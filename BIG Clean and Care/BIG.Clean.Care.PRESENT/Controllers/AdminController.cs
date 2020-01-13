@@ -15,7 +15,7 @@ namespace BIG.Clean.Care.PRESENT.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            if(Session["User"] == null)
+            if (Session["User"] == null)
             {
                 return RedirectToAction("loginpage", "admin");
             }
@@ -23,7 +23,7 @@ namespace BIG.Clean.Care.PRESENT.Controllers
             {
                 return RedirectToAction("ManagementPage", "admin");
             }
-            
+
         }
 
         public ActionResult ManagementPage()
@@ -39,6 +39,21 @@ namespace BIG.Clean.Care.PRESENT.Controllers
                 return View(user);
             }
         }
+
+        public ActionResult NewsListPage()
+        {
+
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("loginpage", "admin");
+            }
+            else
+            {
+                LOGON user = (LOGON)Session["User"];
+                return View(user);
+            }
+        }
+
 
         public ActionResult LoginPage()
         {
@@ -59,15 +74,15 @@ namespace BIG.Clean.Care.PRESENT.Controllers
         [HttpPost]
         public JsonResult AddNews()
         {
-            
+
             ResponseModel resp = new ResponseModel();
-            HttpFileCollectionBase files = Request.Files ;
+            HttpFileCollectionBase files = Request.Files;
             var header = Request.Form["SECTION_NAME"].ToString();
             var subHeader = Request.Form["HTML_SUB_HEADER1"].ToString();
             var content = Request.Form["HTML_VALUE"].ToString();
-            
 
-            var pathFolder= Server.MapPath("~/assets/images/news");
+
+            var pathFolder = Server.MapPath("~/assets/images/news");
             var pathfile = "";
             var fileName = "";
             for (int i = 0; i < files.Count; i++)
@@ -76,12 +91,12 @@ namespace BIG.Clean.Care.PRESENT.Controllers
                 pathfile = Path.Combine(pathFolder, file.FileName);
                 fileName = file.FileName;
                 file.SaveAs(pathfile);
-               
+
             }
 
             NewsService service = new NewsService();
 
-            if(Session["User"] != null)
+            if (Session["User"] != null)
             {
                 var obj = (LOGON)Session["User"];
                 PAGE_CONTENT source = new PAGE_CONTENT()
@@ -106,12 +121,12 @@ namespace BIG.Clean.Care.PRESENT.Controllers
                 resp.STATUS = false;
                 resp.ERROR_MESSAGE = "กรุณาเข้าสู่ระบบใหม่";
             }
-          
+
 
             return Json(resp, JsonRequestBehavior.AllowGet);
         }
 
-       public ActionResult Logout()
+        public ActionResult Logout()
         {
             Session["User"] = null;
             return RedirectToAction("loginpage", "admin");
