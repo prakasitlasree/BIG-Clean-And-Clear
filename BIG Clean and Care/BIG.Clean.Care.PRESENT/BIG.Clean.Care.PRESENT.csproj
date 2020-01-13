@@ -97,6 +97,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\customers\company1.jpg" />
+    <Content Include="assets\images\customers\company2.jpg" />
+    <Content Include="assets\images\customers\company3.jpg" />
+    <Content Include="assets\images\customers\company4.jpg" />
+    <Content Include="assets\images\customers\company5.jpg" />
+    <Content Include="assets\images\customers\company6.jpg" />
+    <Content Include="assets\images\customers\company7.jpg" />
+    <Content Include="assets\images\customers\company8.jpg" />
     <Content Include="assets\images\icon-btn.png" />
     <Content Include="assets\js\bootstrap.bundle.js" />
     <Content Include="assets\css\shop-item.css" />
