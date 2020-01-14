@@ -177,10 +177,12 @@
                 data: fileData,
                 success: function (result, status, xhr) {
                     if (result.STATUS) {
+                        console.log(result);
                         window.location.href = "/admin/news";
                     }
                     else {
-                        alert("บันทึก")
+                        console.log(result);
+                        alert("เกิดข้อผิดพลาด")
                     }
                 }
             })
