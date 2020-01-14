@@ -26,14 +26,7 @@
         }
     </style>
     <style type="text/css">
-        .stuck {
-            position: fixed;
-            top: 35%;
-            border-radius: 5px;
-            height: auto;
-            overflow-y: auto;
-            z-index: 100;
-        }
+     
     </style>
     <header id="header_wrapper">
         <div class="container">
@@ -52,12 +45,10 @@
                             <li class="active"><a href="#hero_section" class="scroll-link">หน้าหลัก</a></li>
                             <li><a href="#aboutUs" class="scroll-link">เกี่ยวกับเรา</a></li>
                             <li><a href="#service" class="scroll-link">บริการของเรา</a></li>
-                            <li><a href="#Portfolio" class="scroll-link">รายชื่อลูกค้า</a></li>
-                            <!--<li><a href="#clients" class="scroll-link"></a></li>-->
+                            <li><a href="#Portfolio" class="scroll-link">รายชื่อลูกค้า</a></li>                            
                             <li><a href="#team" class="scroll-link">ทีมงานบริหาร</a></li>
                             <li><a href="/news/index" class="scroll-link">ข่าวสาร</a></li>
                             <li><a href="#contact" class="scroll-link">ติดต่อเรา</a></li>
-
                         </ul>
                     </div>
                 </nav>
@@ -512,9 +503,10 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    @*<script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>*@
+    <script src="~/assets/js/jquery-1.11.0.min.js"></script>
     <script src="~/assets/js/bootstrap.min.js"></script>
     <script src="~/assets/js/jquery-scrolltofixed.js"></script>
     <script src="~/assets/js/jquery.nav.js"></script>
@@ -542,23 +534,29 @@
             fileData.append('EMAIL', EMAIL);
             fileData.append('MESSAGE', MESSAGE);
 
-            $.ajax({
-                type: "POST",
-                url: "/email/sendmail",
-                dataType: "json",
-                contentType: false,
-                processData: false,
-                data: fileData,
-                success: function (result, status, xhr) {
-                    if (result.STATUS) {
-                        alert("ส่งอีเมลล์สำเร็จ");
-                        location.reload();
+            if (NAME != "" && TEL != "" && MESSAGE != "") {
+                $.ajax({
+                    type: "POST",
+                    url: "/email/sendmail",
+                    dataType: "json",
+                    contentType: false,
+                    processData: false,
+                    data: fileData,
+                    success: function (result, status, xhr) {
+                        if (result.STATUS) {
+                            alert("ส่งอีเมลล์สำเร็จ");
+                            location.reload();
+                        }
+                        else {
+                            alert("เกิดข้อผิดพลาด")
+                        }
                     }
-                    else {
-                        alert("เกิดข้อผิดพลาด")
-                    }
-                }
-            })
+                })
+            }
+            else {
+                alert("กรุณากรอกข้อมูล ชื่อ-นามสกุล เบอร์โทร และหัวข้อ")
+            }
+        
         }
     </script>
 

@@ -36,13 +36,13 @@ namespace BIG.Clean.Care.SERVICE
             {
                 using (BIGCCEntities ctx = new BIGCCEntities())
                 {
-                    var obj = ctx.PAGE_CONTENT.Where(o=>o.ID == source.ID).First();
-                    if(obj != null)
+                    var obj = ctx.PAGE_CONTENT.Where(o => o.ID == source.ID).First();
+                    if (obj != null)
                     {
                         obj.SECTION_NAME = source.SECTION_NAME;
                         obj.HTML_SUB_HEADER1 = source.HTML_SUB_HEADER1;
                         obj.HTML_VALUE = source.HTML_VALUE;
-                        if(source.IMAGE_URL1 != null)
+                        if (source.IMAGE_URL1 != null)
                         {
                             obj.IMAGE_URL1 = source.IMAGE_URL1;
                             obj.IMAGE_URL2 = source.IMAGE_URL2;
@@ -54,7 +54,7 @@ namespace BIG.Clean.Care.SERVICE
                     {
                         resp.ERROR_MESSAGE = "ไม่พบข้อมูล";
                     }
-                    
+
                 }
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace BIG.Clean.Care.SERVICE
                         resp.ERROR_MESSAGE = "เกิดข้อผิดพลาดกรุณารีเฟรชหน้าเว็บอีกครั้ง";
                         resp.STATUS = false;
                     }
-                 
+
                 }
             }
             catch (Exception ex)
@@ -100,7 +100,7 @@ namespace BIG.Clean.Care.SERVICE
             {
                 using (BIGCCEntities ctx = new BIGCCEntities())
                 {
-                    var news = ctx.PAGE_CONTENT.Where(o => o.STATUS == 1).ToList();
+                    var news = ctx.PAGE_CONTENT.Where(o => o.STATUS == 1).OrderBy(o => o.CREATED_DATE).ToList();
 
                     news.ForEach(o => o.CREATED_BY = o.CREATED_BY + " " + o.CREATED_DATE.ToString());
                     if (news.Count > 0)

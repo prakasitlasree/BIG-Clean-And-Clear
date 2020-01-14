@@ -55,7 +55,7 @@ namespace BIG.Clean.Care.PRESENT.Controllers
             var header = Request.Form["SECTION_NAME"].ToString();
             var subHeader = Request.Form["HTML_SUB_HEADER1"].ToString();
             var content = Request.Form["HTML_VALUE"].ToString();
-            var pathFolder = Server.MapPath("~/assets/images/news");
+            var pathFolder = Server.MapPath("~/assets/images");
             try
             {
                 //var pathFolder = Server.MapPath("~/assets/images/news");
@@ -64,6 +64,7 @@ namespace BIG.Clean.Care.PRESENT.Controllers
                 for (int i = 0; i < files.Count; i++)
                 {
                     HttpPostedFileBase file = files[i];
+                  
                     pathfile = Path.Combine(pathFolder, file.FileName);
                     fileName = file.FileName;
                     file.SaveAs(pathfile);
@@ -119,7 +120,7 @@ namespace BIG.Clean.Care.PRESENT.Controllers
             var header = Request.Form["SECTION_NAME"].ToString();
             var subHeader = Request.Form["HTML_SUB_HEADER1"].ToString();
             var content = Request.Form["HTML_VALUE"].ToString();
-            var pathFolder = Server.MapPath("~/assets/images/news");
+            var pathFolder = Server.MapPath("~/assets/images");
             try
             {
                 

@@ -46,7 +46,10 @@
                             <a class="nav-link" href="#">Services</a>
                         </li>*@
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/logout">Log Out</a>
+                        <a class="nav-link" href="/home/index">ไปหน้าเว็บหลัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/logout">ออกจากระบบ</a>
                     </li>
                 </ul>
             </div>
@@ -85,8 +88,10 @@
                         รายละเอียดข่าวสาร
                     </div>
                     <div class="card-body">
-
-                        <table id="table_id" class="display"></table>
+                        <div class="table-responsive">
+                            <table id="table_id" class="display"></table>
+                        </div>
+                      
                     </div>
                 </div>
                 <!-- /.card -->
@@ -165,8 +170,8 @@
                         html += "<td>" + response.RESULT[i].SubHeader + "</td>";
                         html += "<td>" + response.RESULT[i].Value.substring(0, 10) + "...</td>";
                         html += "<td>" + response.RESULT[i].Picture + "</td>";
-                        html += "<td><button class='btn btn-primary' onclick=Edit(" + response.RESULT[i].ID + ") >แก้ไข</button></td>";
-                        html += "<td><button class='btn btn-danger' onclick=Delete(" + response.RESULT[i].ID + ") >ลบ</button></td>";
+                        html += "<td><button class='btn btn-primary btn-block' onclick=Edit(" + response.RESULT[i].ID + ") >แก้ไข</button></td>";
+                        html += "<td><button class='btn btn-danger btn-block' onclick=Delete(" + response.RESULT[i].ID + ") >ลบ</button></td>";
                         html += "</tr>";
                     }
                     html += "<tbody>";

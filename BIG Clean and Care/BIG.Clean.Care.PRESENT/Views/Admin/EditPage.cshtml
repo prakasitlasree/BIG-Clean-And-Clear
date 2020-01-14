@@ -46,7 +46,10 @@
                             <a class="nav-link" href="#">Services</a>
                         </li>*@
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/logout">Log Out</a>
+                        <a class="nav-link" href="/home/index">ไปหน้าเว็บหลัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/logout">ออกจากระบบ</a>
                     </li>
                 </ul>
             </div>
@@ -201,6 +204,7 @@
                 data: fileData,
                 success: function (result, status, xhr) {
                     if (result.STATUS) {
+                        alert("บันทึกข้อมูลเรียบร้อย")
                         window.location.href = "/admin/news";
                     }
                     else {
