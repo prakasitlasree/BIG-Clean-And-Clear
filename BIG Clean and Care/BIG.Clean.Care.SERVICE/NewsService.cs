@@ -100,7 +100,7 @@ namespace BIG.Clean.Care.SERVICE
             {
                 using (BIGCCEntities ctx = new BIGCCEntities())
                 {
-                    var news = ctx.PAGE_CONTENT.Where(o => o.STATUS == 1).OrderBy(o => o.CREATED_DATE).ToList();
+                    var news = ctx.PAGE_CONTENT.Where(o => o.STATUS == 1).OrderByDescending(o => o.CREATED_DATE).ToList();
 
                     news.ForEach(o => o.CREATED_BY = o.CREATED_BY + " " + o.CREATED_DATE.ToString());
                     if (news.Count > 0)
@@ -155,7 +155,7 @@ namespace BIG.Clean.Care.SERVICE
             {
                 using (BIGCCEntities ctx = new BIGCCEntities())
                 {
-                    var news = ctx.PAGE_CONTENT.Where(o => o.STATUS == 1).ToList();
+                    var news = ctx.PAGE_CONTENT.Where(o => o.STATUS == 1).OrderByDescending(o => o.CREATED_DATE).ToList();
 
                     var listdata = news.Select(o => new
                     {
