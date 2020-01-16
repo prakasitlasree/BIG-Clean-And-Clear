@@ -138,6 +138,8 @@
     <Content Include="assets\images\portfolio_pic6.jpg" />
     <Content Include="assets\images\portfolio_pic7.jpg" />
     <Content Include="assets\images\portfolio_pic8.jpg" />
+    <Content Include="assets\js\custom2.js" />
+    <Content Include="assets\js\news-custom.js" />
     <Content Include="assets\vendor\css\bootstrap-grid.css" />
     <Content Include="assets\vendor\css\bootstrap-grid.min.css" />
     <Content Include="assets\vendor\css\bootstrap-reboot.css" />

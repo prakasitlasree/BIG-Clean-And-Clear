@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Net;
 using System.Net.Mail;
 using BIG.Clean.Care.MODEL;
+using System.Web.Configuration;
 
 namespace BIG.Clean.Care.PRESENT.Controllers
 {
@@ -22,17 +23,24 @@ namespace BIG.Clean.Care.PRESENT.Controllers
             ResponseModel resp = new ResponseModel();
             var fromAddress = new MailAddress("bigcleancare2020@gmail.com", "https://www.bigcleanandcare.com");
             var toAddress = new MailAddress("bigcleancare2020@gmail.com", "https://www.bigcleanandcare.com");
-            const string fromPassword = "@bigCC191";
-            const string subject = "Request Infomation";
+            string fromPassword = WebConfigurationManager.AppSettings["password"].ToString();
+            const string subject = "ขอข้อมูลการติดต่อจาก เว็บไซต์ www.bigcleanandcare.com";
 
             var NAME = Request.Form["NAME"].ToString();
             var TEL = Request.Form["TEL"].ToString();
             var EMAIL = Request.Form["EMAIL"].ToString();
             var MESSAGE = Request.Form["MESSAGE"].ToString();
 
-            string body = @"ชื่อ:" + NAME + " อีเมลล์:" + EMAIL + " เบอร์โทร:" + TEL + " ข้อความ:" + MESSAGE;
+            string body = @"ชื่อ: " + NAME + Environment.NewLine + Environment.NewLine +
+                            " อีเมลล์: " + EMAIL + Environment.NewLine + Environment.NewLine +
+                            " เบอร์โทร: " + TEL + Environment.NewLine + Environment.NewLine +
+                            " ข้อความ: " + MESSAGE + Environment.NewLine + Environment.NewLine +
+                            Environment.NewLine +
+                            Environment.NewLine +
+                            "Best Regard" + Environment.NewLine +
+                            "www.bigcleanandcare.com";
 
-         
+
             try
             {
                 using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
@@ -48,7 +56,11 @@ namespace BIG.Clean.Care.PRESENT.Controllers
 
                     //Oops: from/recipients switched around here...
                     //smtpClient.Send("targetemail@targetdomain.xyz", "myemail@gmail.com", "Account verification", body);
-                    smtpClient.Send("bigcleancare2020@gmail.com", "bigcleancare2020@gmail.com", "Account verification", body);
+                    smtpClient.Send("bigcleancare2020@gmail.com", "bigcleancare2020@gmail.com", subject, body);
+                    smtpClient.Send("bigcleancare2020@gmail.com", "bigcleanandcareservices@gmail.com", subject, body);
+                    //smtpClient.Send("bigcleancare2020@gmail.com", "natchaphon2140@gmail.com", subject, body);
+                    smtpClient.Send("bigcleancare2020@gmail.com", "prakasitlasree@gmail.com", subject, body);
+
                     resp.STATUS = true;
                 }
             }
