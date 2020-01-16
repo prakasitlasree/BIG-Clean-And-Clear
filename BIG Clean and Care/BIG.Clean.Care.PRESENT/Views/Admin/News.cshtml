@@ -115,6 +115,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
 
     <script>
 
@@ -122,6 +123,7 @@
             var txt;
             var r = confirm("ต้องการลบข่าวนี้ใช่หรือไม่");
             if (r == true) {
+                $.LoadingOverlay("show");
                 $.ajax({
                     type: "get",
                     url: "/news/Delete",
@@ -147,6 +149,7 @@
 
 
         $(document).ready(function () {
+            $.LoadingOverlay("show");
             $.ajax({
                 url: "/news/GetListNewTable",
                 type: "get",
@@ -182,7 +185,7 @@
                         responsive: true
                     });
 
-
+                    $.LoadingOverlay("hide");
 
                 },
                 error: function (xhr) {

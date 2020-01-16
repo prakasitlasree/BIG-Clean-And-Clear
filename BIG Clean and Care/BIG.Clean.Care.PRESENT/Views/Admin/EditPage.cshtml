@@ -154,9 +154,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
 
     <script>
         $(document).ready(function () {
+            $.LoadingOverlay("show");
             debugger;
             var id = localStorage.getItem("key");
             $.ajax({
@@ -171,10 +173,12 @@
                         $('#SECTION_NAME').val(result.RESULT.SECTION_NAME)
                         $('#HTML_SUB_HEADER1').val(result.RESULT.HTML_SUB_HEADER1)
                         $('#HTML_VALUE').val(result.RESULT.HTML_VALUE)
+                        $.LoadingOverlay("hide");
                     }
                     else {
                         console.log(result);
                         alert("เกิดข้อผิดพลาด")
+                        $.LoadingOverlay("hide");
                     }
                 }
             })
@@ -194,7 +198,7 @@
             fileData.append('HTML_SUB_HEADER1', subHeader);
             fileData.append('HTML_VALUE', content);
             fileData.append('ID', localStorage.getItem("key"));
-
+            $.LoadingOverlay("show");
             $.ajax({
                 type: "POST",
                 url: "/news/Editnews",
@@ -205,10 +209,12 @@
                 success: function (result, status, xhr) {
                     if (result.STATUS) {
                         alert("บันทึกข้อมูลเรียบร้อย")
+                        $.LoadingOverlay("hide");
                         window.location.href = "/admin/news";
                     }
                     else {
                         alert("เกิดข้อผิดพลาด")
+                        $.LoadingOverlay("hide");
                     }
                 }
             })

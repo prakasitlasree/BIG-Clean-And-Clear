@@ -39,7 +39,7 @@
         <div class="container">
             <div class="header_box">
                 <div class="logo">
-                    <a href="#">
+                    <a href="https://www.bigcleanandcare.com/">
                         <img src="~/assets/images/BIG_LOGO.png" alt="logo" />
                     </a>
                 </div>
@@ -49,16 +49,14 @@
                     </div>
                     <div id="main-nav" class="collapse navbar-collapse navStyle">
                         <ul class="nav navbar-nav" id="mainNav">
-                            <li><a href="/home/index" class="scroll-link">หน้าหลัก</a></li>
+                            <li><a href="https://www.bigcleanandcare.com/" class="scroll-link">หน้าหลัก</a></li>
                             <li><a href="/home/index/#aboutUs" class="scroll-link">เกี่ยวกับเรา</a></li>
                             <li><a href="/home/index/#service" class="scroll-link">บริการของเรา</a></li>
                             <li><a href="/home/index/#Portfolio" class="scroll-link">รายชื่อลูกค้า</a></li>
                             <!--<li><a href="#clients" class="scroll-link"></a></li>-->
                             <li><a href="/home/index/#team" class="scroll-link">ทีมงานบริหาร</a></li>
-                            <li class="active"><a href="#">ข่าวสาร</a></li>
-                            <li><a href="/home/index/#contact" class="scroll-link">ติดต่อเรา</a></li>
-
-
+                            <li class="active"><a href="#" class="scroll-link">ข่าวสาร</a></li>
+                            <li><a href="https://www.bigcleanandcare.com/home/index/#contact" class="scroll-link">ติดต่อเรา</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -83,31 +81,31 @@
         </div>
     </section>
 
-    @*<footer class="footer_wrapper" id="contact" style="position: fixed; bottom: 0px; width:100%">
-       
-       
-            <div class="footer_bottom">
-                <span>
-                    Copyright © 2020,
-                    <a href="https://www.bigcleanandcare.com/">บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</a> 19/30 ม.9 ต.นาดี อ.เมือง จ.สมุทรสาคร 74000 <br />
-                    088-220-4100 , 098-859-7272 (คุณอ๊อฟ)
-                    <br />
-                    Line ID : bigcleanandcare
-                    <a href="/admin/index/" style="color:darkslategrey">Login</a>
-                </span>
+    @*<footer class="footer_wrapper"  style="position: fixed; bottom: 0px; width:100%">
 
-            </div>
-     
-    </footer>*@
-    <footer class="footer_wrapper" id="contact">
-     
+
+                <div class="footer_bottom">
+                    <span>
+                        Copyright © 2020,
+                        <a href="https://www.bigcleanandcare.com/">บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</a> 19/30 ม.9 ต.นาดี อ.เมือง จ.สมุทรสาคร 74000 <br />
+                        088-220-4100 , 098-859-7272 (คุณอ๊อฟ)
+                        <br />
+                        Line ID : bigcleanandcare
+                        <a href="/admin/index/" style="color:darkslategrey">Login</a>
+                    </span>
+
+                </div>
+
+        </footer>*@
+    <footer class="footer_wrapper">
+
         <div class="container">
             <div class="footer_bottom">
                 <span>
                     Copyright © 2020,
-                    <a href="https://www.bigcleanandcare.com/">บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</a> 19/30 ม.9 ต.นาดี อ.เมือง จ.สมุทรสาคร 74000 <br />
+                    <a href="https://www.bigcleanandcare.com/">บริษัท บิ๊กคลีนแอนด์แคร์เซอร์วิส จำกัด</a> 19/30 ม.9 ต.นาดี อ.เมือง จ.สมุทรสาคร 74000 <br>
                     088-220-4100 , 098-859-7272 (คุณอ๊อฟ)
-                    <br />
+                    <br>
                     Line ID : bigcleanandcare
                     <a href="/admin/index/" style="color:darkslategrey">Login</a>
                 </span>
@@ -122,7 +120,8 @@
     <script src="~/assets/js/jquery.easing.1.3.js"></script>
     <script src="~/assets/js/jquery.isotope.js"></script>
     <script src="~/assets/js/wow.js"></script>
-    <script src="~/assets/js/custom.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
     <script>
 
         function createNews(img, header, subheader, content, creater) {
@@ -162,6 +161,7 @@
         }
 
         $(document).ready(function () {
+            $.LoadingOverlay("show");
             debugger;
             $.ajax({
                 url: "/news/GetListNew",
@@ -180,7 +180,8 @@
 
                             html += "</div>"
 
-                            $("#content").html(html);
+                            $("#content").append(html);
+                            $.LoadingOverlay("hide");
                         }
                     }
 
