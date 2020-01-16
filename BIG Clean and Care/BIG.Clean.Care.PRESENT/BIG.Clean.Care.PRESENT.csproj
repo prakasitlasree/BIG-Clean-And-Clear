@@ -106,6 +106,16 @@
     <Content Include="assets\images\customers\company7.jpg" />
     <Content Include="assets\images\customers\company8.jpg" />
     <Content Include="assets\images\icon-btn.png" />
+    <Content Include="assets\images\slide\slide1.jpg" />
+    <Content Include="assets\images\slide\slide2.jpg" />
+    <Content Include="assets\images\slide\slide3.jpg" />
+    <Content Include="assets\images\slide\slide4.jpg" />
+    <Content Include="assets\images\slide\slide5.jpg" />
+    <Content Include="assets\images\slide\slide6.jpg" />
+    <Content Include="assets\images\slide\slide7.jpg" />
+    <Content Include="assets\images\slide\slide8.jpg" />
+    <Content Include="assets\images\slide\slide9.jpg" />
+    <Content Include="assets\images\slide\slide10.jpg" />
     <Content Include="assets\js\bootstrap.bundle.js" />
     <Content Include="assets\css\shop-item.css" />
     <Content Include="assets\images\about.jpg" />
