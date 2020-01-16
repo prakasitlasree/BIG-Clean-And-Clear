@@ -191,7 +191,7 @@
     <Content Include="Views\Admin\AddPage.cshtml" />
     <Content Include="Views\Admin\News.cshtml" />
     <Content Include="Views\Admin\EditPage.cshtml" />
-    <None Include="Properties\PublishProfiles\test.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
