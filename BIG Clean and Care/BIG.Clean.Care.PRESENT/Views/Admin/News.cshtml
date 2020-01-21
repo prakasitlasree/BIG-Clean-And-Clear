@@ -95,7 +95,7 @@
                         <div class="table-responsive">
                             <table id="table_id" class="display"></table>
                         </div>
-                      
+
                     </div>
                 </div>
                 <!-- /.card -->
@@ -159,17 +159,17 @@
                 type: "get",
                 success: function (response) {
                     var html = `<thead>
-                                    <tr>
-                                        <th>หัวข้อหลัก</th>
-                                        <th>หัวข้อรอง</th>
-                                        <th>เนื้อหา</th>
-                                        <th>รูปภาพ</th>
-                                        <th>แก้ไข</th>
-                                        <th>ลบ</th>
-                                    </tr>
-                                </thead>
-                                 <tbody>
-                            `;
+                                        <tr>
+                                            <th>หัวข้อหลัก</th>
+                                            <th>หัวข้อรอง</th>
+                                            <th>เนื้อหา</th>
+                                            <th>รูปภาพ</th>
+                                            <th>แก้ไข</th>
+                                            <th>ลบ</th>
+                                        </tr>
+                                    </thead>
+                                     <tbody>
+                                `;
                     for (var i = 0; i < response.RESULT.length; i++) {
                         html += "<tr>";
                         //html += "<td>" + response.RESULT[i].ID + "</td>";

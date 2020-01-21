@@ -73,7 +73,7 @@
                         <i class="fa fa-plus" aria-hidden="true"></i>
                         เพิ่มข่าวสาร
                     </a>
-                    <a href="/news/index" target="_blank" class="list-group-item" >
+                    <a href="/news/index" target="_blank" class="list-group-item">
                         <i class="fa fa-home" aria-hidden="true"></i>
                         รายการข่าว (หน้าแรก)
                     </a>
@@ -166,7 +166,7 @@
             var id = localStorage.getItem("key");
             $.ajax({
                 type: "get",
-                url: "/news/GetNews",           
+                url: "/news/GetNews",
                 data: { id: id },
                 contentType: 'application/json; charset=utf-8',
                 success: function (result, status, xhr) {
